@@ -13,12 +13,6 @@ import initial
 DATA = initial.init()
 line_bot_api = LineBotApi(DATA.LINEBOT_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(DATA.LINEBOT_CHANNEL_SECRET)
-liffid = '你的 LIFF ID'
-
-#LIFF靜態頁面
-@app.route('/page')
-def page():
-	return render_template('index.html', liffid = liffid)
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -124,18 +118,5 @@ def sendFlex(event):
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='ERROR'))
 
-def manageForm(event, mtext):
-    try:
-        flist = mtext[3:].split('/')
-        text1 = '姓名：' + flist[0] + '\n'
-        text1 += '日期：' + flist[1] + '\n'
-        text1 += '包廂：' + flist[2]
-        message = TextSendMessage(
-            text = text1
-        )
-        line_bot_api.reply_message(event.reply_token,message)
-    except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
