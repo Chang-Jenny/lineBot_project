@@ -95,7 +95,7 @@ def sendFlex(event):
                             ButtonComponent(
                                 style='primary',
                                 height='sm',
-                                action=URIAction(label='Cellphone', uri='tel:0987654321'),
+                                action=URIAction(label='Cellphone', uri='tel:0966888666'),
                             ),
                             ButtonComponent(
                                 style='secondary',
