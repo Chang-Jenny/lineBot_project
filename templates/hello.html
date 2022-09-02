@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>first template</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/sty.css')}}">
+    </head>
+    <body>
+        <h1>Flask
+        <img src="{{url_for('static', filename='image/test.png')}}" width="10%"  height="10%" />
+        </h1>
+        <h2>Welcome {{name}}</h2>
+        <h4>now: {{now}}</h4>
+    </body>
+</html>
